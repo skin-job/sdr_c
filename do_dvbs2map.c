@@ -11,7 +11,7 @@ int main(int argc, char* argv[])
 {
 	unsigned int   mu, mask, nshifts, i, j, nbytes;
 	double complex *const_ptr=NULL; 
-	double complex qpsk_const_map[] = {1+I, 1-I, -1+I, -1-I};
+	double complex qpsk_const_map[] = {(+1+I)/sqrt(2), (+1-I)/sqrt(2), (-1+I)/sqrt(2), (-1-I)/sqrt(2)};
 		
 	mu      = 2;
 	const_ptr = qpsk_const_map;	
@@ -26,7 +26,6 @@ int main(int argc, char* argv[])
 		for (i=0;i<nbytes;i++){
 			for (j=0;j<nshifts;j++){
 				obuf[i*nshifts+j] = const_ptr[(ibuf[i]&mask)];		
-		//		putchar(ibuf[i]&mask);
 				ibuf[i]   = (ibuf[i] >> mu);
 			} 
 		}

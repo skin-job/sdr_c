@@ -11,7 +11,7 @@ int main(int argc, char* argv[])
 {
 	unsigned int   mu, mask, i,  nbytes;
 	double complex *const_ptr=NULL; 
-	double complex qpsk_const_map[] = {1+I, 1-I, -1+I, -1-I};
+        double complex qpsk_const_map[] = {(+1+I)/sqrt(2), (+1-I)/sqrt(2), (-1+I)/sqrt(2), (-1-I)/sqrt(2)};
 		
 	mu      = 2;
 	const_ptr = qpsk_const_map;	
