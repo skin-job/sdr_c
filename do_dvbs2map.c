@@ -67,7 +67,7 @@ int main(int argc, char* argv[])
 				ibuf[i]   = (ibuf[i] >> mu);
 			} 
 		}
-		write(STDOUT_FILENO,(unsigned char *) obuf, sizeof(double complex)*nbytes*nshifts);
+		nbytes=write(STDOUT_FILENO,(unsigned char *) obuf, sizeof(double complex)*nbytes*nshifts);
 	}	
 	return 0;
 }
